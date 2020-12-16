@@ -1,0 +1,28 @@
+﻿*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.field-validatation-error{ color: #f00}
+.field-validation-valid{display: none}
+.input-validation-error{border: 1px solid #f00; background-color: #fee}
+.input-validation-valid{display: none}
+.validation-summary-error{ font-weight: bold; color: #f00}
+.validation-summary-valid{display: none}

@@ -1,0 +1,41 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    ViewBag.Title = "RsvpForm";
+}
+<div class="container mt-5 col-4 col-md-offset-4">
+    <h2>Rsvp Form</h2>
+    <div class="alert-danger">
+        @Html.ValidationSummary()
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            <span class="danger">@Html.ValidationMessageFor(x => x.Name)</span>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            <span class="danger">@Html.ValidationMessageFor(x => x.Email)</span>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Phone)
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            <span class="danger">@Html.ValidationMessageFor(x => x.Phone)</span>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.WillAttend)
+            @Html.DropDownListFor(x=> x.WillAttend, new[]
+        {
+           new SelectListItem(){Text="Yes", Value=bool.TrueString},
+            new SelectListItem(){Text="No", Value=bool.FalseString},
+             new SelectListItem(){Text="Maybe", Value=bool.FalseString},
+        }, "Choose an option", new { @class = "form-control" })
+            <span class="danger">@Html.ValidationMessageFor(x => x.WillAttend)</span>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-secondary" />
+    }
+</div>

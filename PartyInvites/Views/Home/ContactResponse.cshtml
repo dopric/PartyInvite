@@ -1,0 +1,13 @@
+﻿@model PartyInvites.Models.ContactResponse
+
+@{
+    ViewBag.Title = "ContactResponse";
+}
+
+<div class="mt-4 ml-5">
+    <h2>Thank you for contacting us @Model.FullName</h2>
+    <h4 class="pt-3">Message: </h4>
+    <p>@Model.Message</p>
+
+    @Html.ActionLink("go to the Home page", "Index", new { @class = "mt-5 btn btn-secondary" })
+</div>

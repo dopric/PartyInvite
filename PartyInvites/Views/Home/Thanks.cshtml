@@ -1,0 +1,19 @@
+﻿@model PartyInvites.Models.GuestResponse
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<h2>Thanks for submitting @Model.Name</h2>
+@if (Model.WillAttend.HasValue && Model.WillAttend.Value)
+{
+    <p>Great that you're comming, see you there!</p>
+    <hr />
+    @Html.ActionLink("Partipients", "Index")
+}
+else
+{
+<p>sorry to hear that you can't make it, see you next time!</p>
+<hr />
+@Html.ActionLink("changed your mind? fill the form again :-)", "RsvpForm")
+}
+
